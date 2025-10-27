@@ -1,9 +1,9 @@
 <?php /*DB tilkobling */
 
 $host="localhost";
-$user="eihel7005";
+$user="";
 $password="";
-$database="eihel7005";
+$database="";
 
 $db=mysqli_connect ($host,$user,$password,$database) or die ("Ikke kontakt");
 
