@@ -7,7 +7,7 @@
 
 <script src="funksjoner.js"> </script>
 
-<h3>Slett poststed</h3>
+<h3>Slett klasse</h3>
 
 <form method="post" action="" id="slettPoststedSkjema" name="slettPoststedSkjema" onSubmit="return bekreft()">
   Postnr <input type="text" id="postnr" name="postnr" required /> <br/>
