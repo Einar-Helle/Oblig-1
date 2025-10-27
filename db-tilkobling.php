@@ -1,6 +1,6 @@
 <?php /*DB tilkobling */
 
-$host="localhost";
+$host="";
 $user="";
 $password="";
 $database="";
