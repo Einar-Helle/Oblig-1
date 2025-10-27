@@ -1,4 +1,4 @@
-<?php
+<?php /*DB tilkobling */
 
 $host="localhost";
 $user="eihel7005";
