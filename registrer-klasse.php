@@ -7,7 +7,7 @@
 <form method="post" action="" id="registrerPoststedSkjema" name="registrerPoststedSkjema">
   Postnr <input type="text" id="postnr" name="postnr" required /> <br/>
   Poststed <input type="text" id="poststed" name="poststed" required /> <br/>
-  <input type="submit" value="Registrer poststed" id="registrerPoststedKnapp" name="registrerPoststedKnapp" /> 
+  <input type="submit" value="Registrer klasse" id="registrerPoststedKnapp" name="registrerPoststedKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 
