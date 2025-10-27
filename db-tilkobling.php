@@ -1,11 +1,12 @@
-<?php /*DB tilkobling */
+<?php  /* db-tilkobling */
+/*
+/*  Programmet foretar tilkobling til database-server og valg av database
+*/
+$host = getenv('DB_HOST');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_DATABASE');
 
-$host="";
-$user="";
-$password="";
-$database="";
-
-$db=mysqli_connect ($host,$user,$password,$database) or die ("Ikke kontakt");
-
-
-?>
+ $db=mysqli_connect($host,$username,$password,$database) or die ("ikke kontakt med database-server");
+    /* tilkobling til database-serveren utført */
+ ?>
