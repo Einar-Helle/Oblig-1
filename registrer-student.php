@@ -1,4 +1,4 @@
-<?php  /* registrer-klasse */
+<?php  /* registrer-student */
 
 ?> 
 
@@ -16,6 +16,9 @@
     {
       $postnr=$_POST ["postnr"];
       $poststed=$_POST ["poststed"];
+      $postnr=$_POST ["postnr"];
+      $poststed=$_POST ["poststed"];
+      
 
       if (!$postnr || !$poststed)
         {
@@ -31,7 +34,7 @@
 
           if ($antallRader!=0)  /* poststedet er registrert fra før */
             {
-              print ("Poststedet er registrert fra f&oslashr");
+              print ("Studenten er registrert fra f&oslashr");
             }
           else
             {
@@ -39,8 +42,9 @@
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
-              print ("F&oslash;lgende poststed er n&aring; registrert: $postnr $poststed"); 
+              print ("F&oslash;lgende student er n&aring; registrert: $postnr $poststed"); 
             }
         }
     }
+
 ?> 
