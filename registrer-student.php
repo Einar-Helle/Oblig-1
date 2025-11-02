@@ -22,9 +22,9 @@
       $klassekode=$_POST ["klassekode"];
       
 
-      if (!$postnr || !$poststed)
+      if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode)
         {
-          print ("B&aring;de postnr og poststed m&aring; fylles ut");
+          print ("B&aring;de brukernavn,fornavn,etternavn og klassekode m&aring; fylles ut");
         }
       else
         {
@@ -34,7 +34,7 @@
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
-          if ($antallRader!=0)  /* poststedet er registrert fra før */
+          if ($antallRader!=0)  /* Student er registrert fra før */
             {
               print ("Studenten er registrert fra f&oslashr");
             }
@@ -44,10 +44,11 @@
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
-              print ("F&oslash;lgende student er n&aring; registrert: $postnr $poststed"); 
+              print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn $klassekode"); 
             }
         }
     }
 
 ?> 
+
 
