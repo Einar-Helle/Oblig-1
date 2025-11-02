@@ -4,20 +4,22 @@
 
 <h3>Registrer student </h3>
 
-<form method="post" action="" id="registrerPoststedSkjema" name="registrerPoststedSkjema">
-  Postnr <input type="text" id="postnr" name="postnr" required /> <br/>
-  Poststed <input type="text" id="poststed" name="poststed" required /> <br/>
-  <input type="submit" value="Registrer klasse" id="registrerPoststedKnapp" name="registrerPoststedKnapp" /> 
+<form method="post" action="" id="registrerStudentSkjema" name="registrerStudentSkjema">
+  Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
+  Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
+  Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
+  Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
+  <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 
 <?php 
-  if (isset($_POST ["registrerPoststedKnapp"]))
+  if (isset($_POST ["registrerStudentKnapp"]))
     {
-      $postnr=$_POST ["postnr"];
-      $poststed=$_POST ["poststed"];
-      $postnr=$_POST ["postnr"];
-      $poststed=$_POST ["poststed"];
+      $brukernavn=$_POST ["brukernavn"];
+      $fornavn=$_POST ["fornavn"];
+      $etternavn=$_POST ["etternavn"];
+      $klassekode=$_POST ["klassekode"];
       
 
       if (!$postnr || !$poststed)
@@ -48,3 +50,4 @@
     }
 
 ?> 
+
