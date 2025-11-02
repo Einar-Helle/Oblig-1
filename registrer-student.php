@@ -30,7 +30,7 @@
         {
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 
-          $sqlSetning="SELECT * FROM poststed WHERE postnr='$postnr';";
+          $sqlSetning="SELECT * FROM studenter WHERE brukernavn='$brukernavn';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
@@ -40,7 +40,7 @@
             }
           else
             {
-              $sqlSetning="INSERT INTO poststed VALUES('$postnr','$poststed');";
+              $sqlSetning="INSERT INTO studenter VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
@@ -50,5 +50,6 @@
     }
 
 ?> 
+
 
 
