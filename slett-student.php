@@ -12,6 +12,12 @@
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return bekreft()">
   Brukernavn <input type="text" id="student" name="student" required /> <br/>
   <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" /> 
+   Brukernavn <input type="text" id="student" name="student" required /> <br/>
+  <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
+   Brukernavn <input type="text" id="student" name="student" required /> <br/>
+  <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
+   Brukernavn <input type="text" id="student" name="student" required /> <br/>
+  <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
 </form>
 
 <?php
