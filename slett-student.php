@@ -19,7 +19,7 @@
     {	
       $student=$_POST ["student"];
 	  
-	  if (!$postnr)
+	  if (!$student)
         {
           print ("Student m&aring; fylles ut");
         }
