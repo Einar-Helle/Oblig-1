@@ -23,9 +23,9 @@
       $klassenavn=$_POST ["klassenavn"];
       $studiumkode=$_POST ["studiumkode"];
 	  
-	  if (!$klasse)
+	  if (!$klassekode || !$klassenavn || !$studiumkode)
         {
-          print ("Klassekode m&aring; fylles ut");
+          print ("Klassekode, klassenavn og studiumkode m&aring; fylles ut");
         }
       else
         {
