@@ -23,7 +23,7 @@
       $klassenavn=$_POST ["klassenavn"];
       $studiumkode=$_POST ["studiumkode"];
 	  
-	  if (!$klassekode, $klassenavn, $studiumkode)
+	  if (!$klasse)
         {
           print ("Klassekode m&aring; fylles ut");
         }
