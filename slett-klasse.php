@@ -21,7 +21,7 @@
 	  
 	  if (!$klasse)
         {
-          print ("Klasse m&aring; fylles ut");
+          print ("Klassekode m&aring; fylles ut");
         }
       else
         {
