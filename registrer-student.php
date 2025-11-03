@@ -1,6 +1,6 @@
-<?php print("<option value=''>velg klassekode </option>");
- include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
+<?php  /* registrer-student */
 
+?> 
 
 <h3>Registrer student </h3>
 
@@ -9,13 +9,15 @@
   Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
   Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
    <select name="klassekode" id="klassekode">
+   <?php print("<option value=''>velg klassekode </option>");
+ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
 </select> <br/>
 <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" />
 <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 
 <?php 
-  if (isset($_POST ["registrerstudentKnapp"]))
+  if (isset($_POST ["registrerStudentKnapp"]))
     {
       $brukernavn=$_POST ["brukernavn"];
       $fornavn=$_POST ["fornavn"];
