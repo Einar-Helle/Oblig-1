@@ -15,19 +15,19 @@
 </form>
 
 <?php
-  if (isset($_POST ["slettPoststedKnapp"]))
+  if (isset($_POST ["slettStudentKnapp"]))
     {	
-      $postnr=$_POST ["postnr"];
+      $student=$_POST ["student"];
 	  
 	  if (!$postnr)
         {
-          print ("Postnr m&aring; fylles ut");
+          print ("Student m&aring; fylles ut");
         }
       else
         {
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 
-          $sqlSetning="SELECT * FROM poststed WHERE postnr='$postnr';";
+          $sqlSetning="SELECT * FROM student WHERE student='$student';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
