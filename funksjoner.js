@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Er du sikker</title>
-</head>
-<body>
-<button onclick="confirmAction()">Slett</button>
-
-<script>
-function confirmAction() {
-let userResponse = confirm("Er du sikker?");
-if (userResponse) {
-alert("Action confirmed!");
-} else {
-alert("Action canceled!");
+function confirmDelete() {
+    const userConfirmed = confirm("Er du sikker?");
+    if (userConfirmed) {
+        // Perform the delete action
+        console.log("Klasse slettet!");
+    } else {
+        // Cancel the delete action
+        console.log("Handling avbrutt.");
+    }
 }
-}
-</script>
-</body>
-</html>
