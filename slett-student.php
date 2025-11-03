@@ -14,6 +14,10 @@
   Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
   Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
   Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
+	<select name="studiumkode" id="studiumkode">
+<?php print("<option value=''>velg student </option>");
+include("dynamiske-funksjoner.php"); listeboksklassekode(); ?>
+	</select><br/>
   <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
  </form>
 
@@ -51,4 +55,5 @@
             }
         }
     }
+
 ?> 
