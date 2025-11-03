@@ -24,7 +24,7 @@
 	  
 	  if (!$student)
         {
-          print ("Brukernavn m&aring; fylles ut");
+          print ("Brukernavn, fornavn, etternavn og klassekode m&aring; fylles ut");
         }
       else
         {
