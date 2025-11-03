@@ -20,9 +20,12 @@
 <?php
   if (isset($_POST ["slettStudentKnapp"]))
     {	
-      $student=$_POST ["student"];
+      $brukernavn=$_POST ["brukernavn"];
+      $fornavn=$_POST ["fornavn"];
+      $etternavn=$_POST ["etternavn"];
+      $klassekode=$_POST ["klassekode"];
 	  
-	  if (!$student)
+	  if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode)
         {
           print ("Brukernavn, fornavn, etternavn og klassekode m&aring; fylles ut");
         }
