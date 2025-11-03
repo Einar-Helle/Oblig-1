@@ -33,7 +33,7 @@
 
           if ($antallRader==0)  /* poststedet er ikke registrert */
             {
-              print ("Poststedet finnes ikke");
+              print ("studenten finnes ikke");
             }
           else
             {	  
