@@ -10,10 +10,10 @@
 <h3>Slett student</h3>
 
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return bekreft()">
-  Brukernavn <input type="text" id="student" name="student" required /> <br/>
-  Fornavn <input type="text" id="student" name="student" required /> <br/>
-  Etternavn <input type="text" id="student" name="student" required /> <br/>
-  Klassekode <input type="text" id="student" name="student" required /> <br/>
+  Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
+  Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
+  Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
+  Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
   <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
 </form>
 
