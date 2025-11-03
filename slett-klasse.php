@@ -19,7 +19,9 @@
 <?php
   if (isset($_POST ["slettklasseKnapp"]))
     {	
-      $klasse=$_POST ["klasse"];
+      $klassekode=$_POST ["klassekode"];
+      $klassenavn=$_POST ["klassenavn"];
+      $Studiumkode=$_POST ["Studiumkode"];
 	  
 	  if (!$klasse)
         {
