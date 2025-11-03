@@ -1,6 +1,6 @@
-<?php  /* registrer-student */
+<?php print("<option value=''>velg klassekode </option>");
+ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
 
-?> 
 
 <h3>Registrer student </h3>
 
@@ -9,8 +9,6 @@
   Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
   Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
    <select name="klassekode" id="klassekode">
-   <?php print("<option value=''>velg klassekode </option>");
- include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
 </select> <br/>
 <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" />
 <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
@@ -36,7 +34,6 @@
           $sqlSetning="SELECT * FROM student WHERE brukernavn='$brukernavn';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
-
           if ($antallRader!=0)  /* Student er registrert fra før */
             {
               print ("Studenten er registrert fra f&oslashr");
@@ -46,7 +43,6 @@
               $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
-
               print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn $klassekode"); 
             }
         }
