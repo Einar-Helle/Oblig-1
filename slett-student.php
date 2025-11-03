@@ -9,9 +9,9 @@
 
 <h3>Slett student</h3>
 
-<form method="post" action="" id="slettPoststedSkjema" name="slettPoststedSkjema" onSubmit="return bekreft()">
+<form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return bekreft()">
   Postnr <input type="text" id="postnr" name="postnr" required /> <br/>
-  <input type="submit" value="Slett poststed" name="slettPoststedKnapp" id="slettPoststedKnapp" /> 
+  <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" /> 
 </form>
 
 <?php
@@ -37,11 +37,11 @@
             }
           else
             {	  
-              $sqlSetning="DELETE FROM poststed WHERE postnr='$postnr';";
+              $sqlSetning="DELETE FROM student WHERE student='$student';";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
                 /* SQL-setning sendt til database-serveren */
 		
-              print ("F&oslash;lgende poststed er n&aring; slettet: $postnr  <br />");
+              print ("F&oslash;lgende student er n&aring; slettet: $student  <br />");
             }
         }
     }
