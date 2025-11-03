@@ -15,7 +15,7 @@
   Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
   Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
   <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
-</form>
+ </form>
 
 <?php
   if (isset($_POST ["slettStudentKnapp"]))

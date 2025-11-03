@@ -9,8 +9,11 @@
   Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
   Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
   Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
-  <input type="submit" value="Registrer student" id="registrerstudentKnapp" name="registrerstudentKnapp" /> 
-  <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
+   <?php print("<option value=''>velg studium </option>");
+ include("dynamiske-funksjoner.php"); listeboksStudiumkode(); ?>
+</select> <br/>
+<input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" />
+<input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 
 <?php 
