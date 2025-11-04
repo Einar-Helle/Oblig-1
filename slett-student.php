@@ -15,7 +15,7 @@
  Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
 	<select name="brukernavn" id="brukernavn">
 <?php print("<option value=''>velg student </option>");
-include("dynamiske-funksjoner.php"); listebokstudent(); ?>
+include("dynamiske-funksjoner.php"); listeboksstudent(); ?>
 	</select><br/>
   <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
  </form>
@@ -55,6 +55,7 @@ include("dynamiske-funksjoner.php"); listebokstudent(); ?>
     }
 
 ?> 
+
 
 
 
