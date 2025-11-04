@@ -10,11 +10,10 @@
 <h3>Slett student</h3>
 
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return bekreft()">
-  Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
-  Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
-  Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
-  Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
-	<select name="klassekode" id="klassekode">
+ Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
+ Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
+ Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
+	<select name="brukernavn" id="brukernavn">
 <?php print("<option value=''>velg student </option>");
 include("dynamiske-funksjoner.php"); listebokstudent(); ?>
 	</select><br/>
@@ -24,14 +23,13 @@ include("dynamiske-funksjoner.php"); listebokstudent(); ?>
 <?php
   if (isset($_POST ["slettStudentKnapp"]))
     {	
-      $brukernavn=$_POST ["brukernavn"]; 
       $fornavn=$_POST ["fornavn"];
       $etternavn=$_POST ["etternavn"];
       $klassekode=$_POST ["klassekode"];
 	  
-	  if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode)
+	  if (!$fornavn || !$etternavn || !$klassekode)
         {
-          print ("Brukernavn, fornavn, etternavn og klassekode m&aring; fylles ut");
+          print ("Fornavn, etternavn og klassekode m&aring; fylles ut");
         }
       else
         {
@@ -57,5 +55,6 @@ include("dynamiske-funksjoner.php"); listebokstudent(); ?>
     }
 
 ?> 
+
 
 
