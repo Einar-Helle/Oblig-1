@@ -10,7 +10,6 @@
 <h3>Slett klasse</h3>
 
 <form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onSubmit="return bekreft()">
-  Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
   Klassenavn <input type="text" id="klassenavn" name="klassenavn" required /> <br/>
   Studiumkode <input type="text" id="studiumkode" name="studiumkode" required /> <br/>
 		<select name="klassekode" id="klassekode">
@@ -55,5 +54,6 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
     }
 
 ?> 
+
 
 
