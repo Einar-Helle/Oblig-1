@@ -23,7 +23,6 @@ include("dynamiske-funksjoner.php"); listeboksstudent(); ?>
 <?php
   if (isset($_POST ["slettStudentKnapp"]))
     {	
-	  $brukernavn=$_post ["brukernavn"]
       $fornavn=$_POST ["fornavn"];
       $etternavn=$_POST ["etternavn"];
       $klassekode=$_POST ["klassekode"];
@@ -56,6 +55,7 @@ include("dynamiske-funksjoner.php"); listeboksstudent(); ?>
     }
 
 ?> 
+
 
 
 
