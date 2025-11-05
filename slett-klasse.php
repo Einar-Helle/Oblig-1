@@ -28,7 +28,7 @@ if (isset($_POST["slettklasseKnapp"])) {
 
         // 1. Finnes klassen?
         $sqlSetning = "SELECT * FROM klasse WHERE klassekode='$klassekode';";
-        $sqlResultat = mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
+        $sqlResultat = mysqli_query($sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
         $antallRader = mysqli_num_rows($sqlResultat); 
 
         if ($antallRader == 0) {  /* klassen er ikke registrert */
@@ -54,6 +54,7 @@ if (isset($_POST["slettklasseKnapp"])) {
         }
     }
 ?> 
+
 
 
 
