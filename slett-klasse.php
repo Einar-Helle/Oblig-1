@@ -1,7 +1,7 @@
 <?php  /* slett-poststed */
 /*
-/*  Programmet lager et skjema for å velge et poststed som skal slettes  
-/*  Programmet sletter det valgte poststedet
+/*  Programmet lager et skjema for å velge en klasse som skal slettes  
+/*  Programmet sletter den valgte klassen
 */
 ?> 
 
@@ -38,7 +38,7 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
-          if ($antallRader==0)  /* poststedet er ikke registrert */
+          if ($antallRader==0)  /* klassen er ikke registrert */
             {
               print ("Klassen finnes ikke");
             }
@@ -50,28 +50,12 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
 		
               print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
 
-try {
-    $stmt = $pdo->prepare("DELETE FROM klasse WHERE klassekode = :klassekode");
-    $stmt->execute(['klassekode' => $klassekode]);
-
-    if ($stmt->rowCount() === 0) {
-        print ("Fant ingen klasse med kode $klassekode.");
-    } else {
-        print ("Klassen $klassekode ble slettet.");
-    }
-} catch (PDOException $e) {
-    // Foreign key-feil (1451) = kan ikke slette pga barn-rader (studenter)
-    if ($e->getCode() == 23000) { // SQLSTATE for constraint violation
-        print ("Kan ikke slette klassen $klassekode fordi den har studenter.");
-    } else {
-        print ("En feil oppstod: ") . $e->getMessage();
-    }
-}
             }
         }
     }
 
 ?> 
+
 
 
 
