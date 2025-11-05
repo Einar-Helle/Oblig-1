@@ -10,8 +10,8 @@
 <h3>Slett klasse</h3>
 
 <form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onSubmit="return bekreft()">
-  Klassenavn <input type="text" id="klassenavn" name="klassenavn" required /> <br/>
-  Studiumkode <input type="text" id="studiumkode" name="studiumkode" required /> <br/>
+  <select name="klassenavn" id="klassenavn">
+  <select name="studiumkode" id="studiumkode">
   <select name="klassekode" id="klassekode">
     <?php 
       print("<option value=''>velg klasse </option>");
@@ -62,6 +62,7 @@ if (isset($_POST["slettklasseKnapp"])) {
     }
 }
 ?> 
+
 
 
 
