@@ -1,4 +1,4 @@
-<?php  /* slett-poststed */
+<?php  /* slett-klasse */
 /*
 /*  Programmet lager et skjema for å velge en klasse som skal slettes  
 /*  Programmet sletter den valgte klassen
@@ -55,6 +55,7 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
     }
 
 ?> 
+
 
 
 
