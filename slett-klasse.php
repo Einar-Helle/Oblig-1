@@ -47,8 +47,8 @@ if (isset($_POST["slettklasseKnapp"])) {
                 print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
             }
         }
-    }
 ?> 
+
 
 
 
