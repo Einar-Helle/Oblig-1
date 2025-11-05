@@ -29,9 +29,6 @@ if (isset($_POST["slettklasseKnapp"])) {
         // 1. Finnes klassen?
         $sqlSetning = "SELECT * FROM klasse WHERE klassekode='$klassekode';";
 
-        if ($antallRader == 0) {  /* klassen er ikke registrert */
-            print ("Klassen finnes ikke");
-        } else {
 
             // 2. Sjekk om det finnes studenter i denne klassen
             $sqlSetning = "SELECT COUNT(*) AS antall FROM student WHERE klassekode='$klassekode';";
@@ -52,6 +49,7 @@ if (isset($_POST["slettklasseKnapp"])) {
         }
     }
 ?> 
+
 
 
 
