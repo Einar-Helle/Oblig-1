@@ -26,12 +26,6 @@
 if (isset($_POST["slettklasseKnapp"])) {	
     $klassekode = $_POST["klassekode"];
 
-    
-    if (!$klassekode || !$klassenavn || !$studiumkode) {
-        print ("Klassekode, klassenavn og studiumkode m&aring; fylles ut");
-    } else {
-        include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
-
         // 1. Finnes klassen?
         $sqlSetning = "SELECT * FROM klasse WHERE klassekode='$klassekode';";
         $sqlResultat = mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
@@ -61,6 +55,7 @@ if (isset($_POST["slettklasseKnapp"])) {
     }
 }
 ?> 
+
 
 
 
