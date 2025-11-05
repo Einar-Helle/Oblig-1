@@ -28,7 +28,6 @@ if (isset($_POST["slettklasseKnapp"])) {
 
         // 1. Finnes klassen?
         $sqlSetning = "SELECT * FROM klasse WHERE klassekode='$klassekode';";
-        $antallRader = mysqli_num_rows($sqlResultat); 
 
         if ($antallRader == 0) {  /* klassen er ikke registrert */
             print ("Klassen finnes ikke");
@@ -53,6 +52,7 @@ if (isset($_POST["slettklasseKnapp"])) {
         }
     }
 ?> 
+
 
 
 
