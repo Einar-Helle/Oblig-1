@@ -53,8 +53,8 @@ if (isset($_POST["slettklasseKnapp"])) {
             }
         }
     }
-}
 ?> 
+
 
 
 
