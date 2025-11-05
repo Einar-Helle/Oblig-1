@@ -49,11 +49,43 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
                 /* SQL-setning sendt til database-serveren */
 		
               print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
+
+				function slettKlasse(string $klassekode, PDO $pdo): array
+{
+    // 1. Sjekk om klassen har studenter
+    $stmt = $pdo->prepare("SELECT COUNT(*) FROM student WHERE klassekode = :klassekode");
+    $stmt->execute(['klassekode' => $klassekode]);
+    $antallStudenter = (int) $stmt->fetchColumn();
+
+    if ($antallStudenter > 0) {
+        return [
+            'ok' => false,
+            'message' => "Kan ikke slette klassen '$klassekode' fordi den har $antallStudenter student(er)."
+        ];
+    }
+
+    // 2. Slett klassen
+    $delete = $pdo->prepare("DELETE FROM klasse WHERE klassekode = :klassekode");
+    $delete->execute(['klassekode' => $klassekode]);
+
+    if ($delete->rowCount() === 0) {
+        return [
+            'ok' => false,
+            'message' => "Fant ingen klasse med klassekode '$klassekode'."
+        ];
+    }
+
+    return [
+        'ok' => true,
+        'message' => "Klassen '$klassekode' ble slettet."
+    ];
+}
             }
         }
     }
 
 ?> 
+
 
 
 
