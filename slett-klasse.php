@@ -60,7 +60,7 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
     if ($antallStudenter > 0) {
         return [
             'ok' => false,
-            'message' => "Kan ikke slette klassen '$klassekode' fordi den har $antallStudenter student(er)."
+            print ("Kan ikke slette klassen '$klassekode' fordi den har $antallStudenter student(er).")
         ];
     }
 
@@ -71,13 +71,13 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
     if ($delete->rowCount() === 0) {
         return [
             'ok' => false,
-            'message' => "Fant ingen klasse med klassekode '$klassekode'."
+            print ("Fant ingen klasse med klassekode '$klassekode'.")
         ];
     }
 
     return [
         'ok' => true,
-        'message' => "Klassen '$klassekode' ble slettet."
+        print ("Klassen '$klassekode' ble slettet.")
     ];
 }
             }
@@ -85,6 +85,7 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
     }
 
 ?> 
+
 
 
 
