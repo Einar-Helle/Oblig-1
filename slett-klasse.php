@@ -50,41 +50,29 @@ include("dynamiske-funksjoner.php"); listeboksklasse(); ?>
 		
               print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
 
-				function slettKlasse(string $klassekode, PDO $pdo): array
-{
-    // 1. Sjekk om klassen har studenter
-    $stmt = $pdo->prepare("SELECT COUNT(*) FROM student WHERE klassekode = :klassekode");
+try {
+    $stmt = $pdo->prepare("DELETE FROM klasse WHERE klassekode = :klassekode");
     $stmt->execute(['klassekode' => $klassekode]);
-    $antallStudenter = (int) $stmt->fetchColumn();
 
-    if ($antallStudenter > 0) {
-        return [
-            'ok' => false,
-            print ("Kan ikke slette klassen '$klassekode' fordi den har $antallStudenter student(er).")
-        ];
+    if ($stmt->rowCount() === 0) {
+        print ("Fant ingen klasse med kode $klassekode.");
+    } else {
+        print ("Klassen $klassekode ble slettet.");
     }
-
-    // 2. Slett klassen
-    $delete = $pdo->prepare("DELETE FROM klasse WHERE klassekode = :klassekode");
-    $delete->execute(['klassekode' => $klassekode]);
-
-    if ($delete->rowCount() === 0) {
-        return [
-            'ok' => false,
-            print ("Fant ingen klasse med klassekode '$klassekode'.")
-        ];
+} catch (PDOException $e) {
+    // Foreign key-feil (1451) = kan ikke slette pga barn-rader (studenter)
+    if ($e->getCode() == 23000) { // SQLSTATE for constraint violation
+        print ("Kan ikke slette klassen $klassekode fordi den har studenter.");
+    } else {
+        print ("En feil oppstod: ") . $e->getMessage();
     }
-
-    return [
-        'ok' => true,
-        print ("Klassen '$klassekode' ble slettet.")
-    ];
 }
             }
         }
     }
 
 ?> 
+
 
 
 
